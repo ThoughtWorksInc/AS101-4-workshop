@@ -7,8 +7,6 @@ services:
       - "8000:8000"
     links:
       - postgres:postgres
-    volumes:
-      - ./web:/usr/src/app
     env_file: .env
     command: bash -c "python /usr/src/app/create_db.py && /usr/local/bin/gunicorn -w 2 -b :8000 app:app"
 
