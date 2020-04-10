@@ -21,20 +21,21 @@ Then make a clone of your fork of this repository to your local computer.
 
 [Talisman](https://github.com/thoughtworks/talisman) is a Secrets Scanning application for git to prevent committing and pushing of secrets to your git source control server.
 
-It works by using git hooks into the local copy of the source code you are 
+It works by using git hooks into the local copy of the source code you are working on.
 
 We want to run Talisman on this repository to scan it for secrets.
 
 ### Installing Talisman
 
 We want to follow the instructions on the [Talisman README.md](https://github.com/thoughtworks/talisman#installation-as-a-global-hook-template
-) for installing Talisman into a single local git reposiitory.
+) for installing Talisman as a global hook template.
+
 
 Before we install Talisman, make a note of the path of your forked, cloned repository. e.g. 
 
 ```
 $ pwd
-/Uers/will/source/sample-flask-application
+/Users/willvk/source/sample-flask-application
 ```
 
 We can then download and run an install script to load the Talisman binaries for our specific Operating System. At the prompt for what local repositories to add the hook to, enter the path `/tmp`. This will prevent it installing Talisman for all the repositories under your home path.
@@ -43,6 +44,15 @@ We can then download and run an install script to load the Talisman binaries for
 curl --silent  https://raw.githubusercontent.com/thoughtworks/talisman/master/global_install_scripts/install.bash > /tmp/install_talisman.bash && /bin/bash /tmp/install_talisman.bash
 ```
 
-Talisman also sets an environment variable called `$TALISMAN_HOME` in your bash profile that points to the home path of Talisman on your system. This needs to be present in your resource file (`.bashrc`, `.bash_profile`, `.zshrc`, etc) for Talisman to run. You may need to either source your bash profile or restart the terminal to make sure it is there. Yo can check it is present by running `env|grep TALISMAN_HOME`.
+For example:
+
+![](./images/1.png)
+
+Talisman also sets an environment variable called `$TALISMAN_HOME` in your bash profile that points to the home path of Talisman on your system. This needs to be present in your resource file (`.bashrc`, `.bash_profile`, `.zshrc`, etc) for Talisman to run. You may need to either source your bash profile or restart the terminal to make sure it is there. You can check it is present by running:
+
+```bash
+$ env | grep TALISMAN_HOME
+TALISMAN_HOME=/Users/willvk/.talisman/bin
+```
 
 
