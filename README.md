@@ -31,9 +31,10 @@ We want to follow the instructions on the [Talisman README.md](https://github.co
 ) for installing Talisman as a global hook template.
 
 
-Before we install Talisman, make a note of the path of your forked, cloned repository. e.g. 
+Before we install Talisman, change directory into your forked, cloned repository and make a note of the path.
 
-```
+```bash
+$ cd sample-flask-app
 $ pwd
 /Users/willvk/source/sample-flask-application
 ```
