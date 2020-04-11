@@ -48,7 +48,9 @@ $ pwd
 We can then download and run an install script to load the Talisman binaries for our specific Operating System. At the prompt for what local repositories to add the hook to, enter the path listed by `pwd` above for your repository. This will prevent it installing Talisman for all the repositories under your home path.
 
 ```
-curl --silent  https://raw.githubusercontent.com/thoughtworks/talisman/master/global_install_scripts/install.bash > /tmp/install_talisman.bash && /bin/bash /tmp/install_talisman.bash
+curl --silent \
+https://raw.githubusercontent.com/thoughtworks/talisman/master/global_install_scripts/install.bash \
+> /tmp/install_talisman.bash && /bin/bash /tmp/install_talisman.bash
 ```
 
 For example:
