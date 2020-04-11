@@ -39,7 +39,7 @@ $ pwd
 /Users/willvk/source/sample-flask-application
 ```
 
-We can then download and run an install script to load the Talisman binaries for our specific Operating System. At the prompt for what local repositories to add the hook to, enter the path `/tmp`. This will prevent it installing Talisman for all the repositories under your home path.
+We can then download and run an install script to load the Talisman binaries for our specific Operating System. At the prompt for what local repositories to add the hook to, enter the path listed by `pwd` above for your repository. This will prevent it installing Talisman for all the repositories under your home path.
 
 ```
 curl --silent  https://raw.githubusercontent.com/thoughtworks/talisman/master/global_install_scripts/install.bash > /tmp/install_talisman.bash && /bin/bash /tmp/install_talisman.bash
@@ -55,5 +55,19 @@ Talisman also sets an environment variable called `$TALISMAN_HOME` in your bash 
 $ env | grep TALISMAN_HOME
 TALISMAN_HOME=/Users/willvk/.talisman/bin
 ```
+
+### Testing Talisman installed correctly
+
+From the command prompt, enter `talisman`. It should return a list of command options.
+
+In our sample application, open the file `web/config.py` in a text editor of your choice. Add a benign change to the file by adding an exra line to the end of the file, or a space somewhere. It can be anything as long as it doesn't affect the code.
+
+Save the file.
+
+Do a git add of the file. e.g. `git add web/config.py`.
+
+Then do a git commit. e.g. `git commit -m "testing talisman"'
+
+If all is working, you should be prompted by talisman about a potential secret being checked-in.
 
 
