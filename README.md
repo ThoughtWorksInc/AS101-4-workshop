@@ -11,6 +11,12 @@ This application consists of two containers:
 
 It is a simple message posting application where messages entered by the user in the web interface are written to the PostgreSQL database. The web front-end shows all messages entered by users.
 
+### Starting the Application
+
+`docker-compose up`
+
+Then in your browser go to `localhost:8000`
+
 ## Forking the repository
 
 Firstly, make a git fork of this repository through the Github user interface. This will allow you to make commits and push changes to your own copy of the source code.
