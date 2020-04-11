@@ -36,7 +36,6 @@ We want to run Talisman on this repository to scan it for secrets.
 We want to follow the instructions on the [Talisman README.md](https://github.com/thoughtworks/talisman#installation-as-a-global-hook-template
 ) for installing Talisman as a global hook template.
 
-
 Before we install Talisman, change directory into your forked, cloned repository and make a note of the path.
 
 ```bash
