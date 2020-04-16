@@ -8,12 +8,15 @@ services:
     links:
       - postgres:postgres
     env_file: .env
+    depends_on:
+     - postgres
     command: bash -c "python /usr/src/app/create_db.py && /usr/local/bin/gunicorn -w 2 -b :8000 app:app"
 
   postgres:
     restart: always
-    image: postgres:latest
+    image: postgres:12.2
     ports:
       - "5432:5432"
     environment:
-        TZ: "Australia/Melbourne"
+      POSTGRES_PASSWORD: postgres
+      TZ: "Australia/Melbourne"
