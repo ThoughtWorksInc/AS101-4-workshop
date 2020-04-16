@@ -48,9 +48,6 @@ Save the file.
 
 Do a git add of the file. e.g. `git add web/config.py`.
 
-Then do a git commit. e.g. `git commit -m "testing talisman"'
+Then do a git commit. e.g. `git commit -m "testing talisman"`
 
 If all is working, you should be prompted by talisman about a potential secret being checked-in.
-
-
-
