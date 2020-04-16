@@ -13,3 +13,15 @@ To see the sample app running, make sure you have docker-compose installed, then
 `docker-compose up`
 
 Then in your browser go to `localhost:8000`
+
+### Stopping the Application
+
+To stop the application, run the following command:
+
+`docker-compose down`
+
+**Note:**
+
+If starting the application, you should stop the application before proceeding with the [sample-deploy-pipeline](https://github.com/wilvk/sample-deploy-pipeline) instructions as we will spin up this application in a Jenkins deployment pipeline.
+
+Attempting to have two copies of the `sample-flask-app` container running at the same time on your computer is not possible as we are using [Docker-in-Docker](https://www.docker.com/blog/docker-can-now-run-within-docker/) (dind) to spin up the container from a Jenkins container and the exposed ports will conflict between the two containers.
