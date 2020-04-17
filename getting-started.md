@@ -16,9 +16,7 @@ Then in your browser go to `localhost:8000`
 
 ### Stopping the Application
 
-To stop the application, run the following command:
-
-`docker-compose down`
+To stop the application, from the command line enter `Control-C`.
 
 **Note:**
 
