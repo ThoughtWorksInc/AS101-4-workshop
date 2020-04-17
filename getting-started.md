@@ -10,7 +10,7 @@ Then, make a clone of your fork of this repository to your local computer.
 
 To see the sample app running, make sure you have docker-compose installed, then run the following command:
 
-`docker-compose up`
+`docker-compose up --build`
 
 Then in your browser go to `localhost:8000`
 
