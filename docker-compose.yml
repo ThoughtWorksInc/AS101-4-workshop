@@ -1,7 +1,6 @@
 version: '3'
 services:
   web:
-    restart: always
     build: ./web
     ports:
       - "8000:8000"
@@ -13,7 +12,6 @@ services:
     command: bash -c "python /usr/src/app/create_db.py && /usr/local/bin/gunicorn -w 2 -b :8000 app:app"
 
   postgres:
-    restart: always
     image: postgres:12.2
     ports:
       - "5432:5432"
