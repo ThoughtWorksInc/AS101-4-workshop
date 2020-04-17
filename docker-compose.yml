@@ -16,5 +16,12 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_PASSWORD: postgres
       TZ: "Australia/Melbourne"
+      #  these are our database credentials.
+      #  for the purposes of this workshop, this is not relevant and shouldn't be changed.
+      #  it is just here as we are staging the database via docker.
+      #  in a prod environment this would be done differently (or not in Docker at all).
+      #  🌌 these aren't the droids you are looking for 🌌
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
