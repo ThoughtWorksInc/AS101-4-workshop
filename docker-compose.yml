@@ -7,8 +7,6 @@ services:
     links:
       - postgres:postgres
     env_file: .env
-    volumes:
-      - ./web:/usr/src/app
     depends_on:
      - postgres
     command: /usr/src/app/start-app.sh
