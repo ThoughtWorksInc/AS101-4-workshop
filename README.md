@@ -16,11 +16,11 @@ git clone https://github.com/[REPLACE-WITH-YOUR-FORK]/sample-flask-app.git
 
 ## Exercise 1 - secret detection in code
 
+For this exercise, running the application is not necessary.
+
 ### 01-01 - Hawkeye
 
 We will use [Hawkeye](https://github.com/hawkeyesec/scanner-cli) to scan secrets in the code base.
-
-For this section, running the application is not necessary.
 
 Run Hawkeye in Docker with:
 
@@ -31,6 +31,8 @@ docker run --rm -v $PWD:/target hawkeyesec/scanner-cli:latest
 Did you find anything interesting?
 
 ## Exercise 2 - secret detection with Git hooks
+
+For this exercise, running the application is not necessary.
 
 ### 02-01 Talisman
 
@@ -57,17 +59,23 @@ git reset
 git checkout .
 ```
 
-### Flask application
+## Exercise 3 - CI/CD
 
-The application consists of two docker containers:
+### 03-01 Install the build server
+
+Run the build server by following the instructions in the `sample-deploy-pipeline` Jenkins repository located [here](https://github.com/wilvk/sample-deploy-pipeline/blob/master/getting-started.md).
+
+### 03-02 Run the Flask application via the build server
+
+The Flask application consists of two docker containers:
 
 * A frontend website written in Python Flask
 * A backend database using PostgreSQL
 
 It is a simple message-posting application where messages entered by the user in the web interface are written to the PostgreSQL database. The web front-end shows all messages entered by users.
 
-Refer to the [Getting Started section](./getting-started.md) to start or stop the application.
+Configure the CI/CD pipeline by following instructions available in [building-the-pipeline.md](https://github.com/wilvk/sample-deploy-pipeline/blob/master/building-the-pipeline.md)
 
-This application is also intended for use with the `sample-deploy-pipeline` Jenkins application located [here](https://github.com/wilvk/sample-deploy-pipeline).
+### 03-03 Install and run Hawkeye
 
-
+Follow the instructions available in [adding-hawkeye.md](https://github.com/wilvk/sample-deploy-pipeline/blob/master/adding-hawkeye.md)
