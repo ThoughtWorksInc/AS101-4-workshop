@@ -23,7 +23,7 @@ Run the following command:
 ```bash
 curl --silent \
 https://raw.githubusercontent.com/thoughtworks/talisman/master/global_install_scripts/install.bash \
-  /tmp/install_talisman.bash && /bin/bash /tmp/install_talisman.bash
+  -o /tmp/install_talisman.bash && /bin/bash /tmp/install_talisman.bash
 ```
 
 This command comes from the official [Talisman instructions](https://github.com/thoughtworks/talisman#installation-as-a-global-hook-template
