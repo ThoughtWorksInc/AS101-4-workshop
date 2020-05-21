@@ -79,3 +79,11 @@ Configure the CI/CD pipeline by following instructions available in [building-th
 ### 03-03 Install and run Hawkeye
 
 Follow the instructions available in [adding-hawkeye.md](https://github.com/wilvk/sample-deploy-pipeline/blob/master/adding-hawkeye.md)
+
+## Exercise 4 - Handling secrets
+
+### 04-01 - Remove secrets in code
+
+We will update our code to remove secrets in code and instead, use Ansible Vault to source them.
+
+Follow the instructions in [handling-secrets.md](https://github.com/wilvk/sample-deploy-pipeline/blob/master/handling-secrets.md).
