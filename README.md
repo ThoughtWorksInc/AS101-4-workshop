@@ -9,7 +9,8 @@ The application consists of two docker containers:
 
 It is a simple message-posting application where messages entered by the user in the web interface are written to the PostgreSQL database. The web front-end shows all messages entered by users.
 
-**Note:** this repository deliberately contains
+**Warning:** this repository deliberately contains vulnerabilities, do not use the code from this
+repo in production.
 
 ## Instructions
 
