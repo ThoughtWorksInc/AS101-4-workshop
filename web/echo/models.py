@@ -1,5 +1,5 @@
 import datetime
-from app import db
+from .db import db
 
 
 class Post(db.Model):

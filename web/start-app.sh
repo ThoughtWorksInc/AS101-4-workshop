@@ -9,4 +9,4 @@ echo "connected!"
 
 python /usr/src/app/create_db.py
 
-/usr/local/bin/gunicorn -w 2 -b :8000 app:app
+/usr/local/bin/gunicorn -w 2 -b :8000 echo.app:app

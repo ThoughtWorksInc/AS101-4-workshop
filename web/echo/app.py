@@ -1,15 +1,11 @@
-from flask import Flask
-from flask import request, render_template
-from flask_sqlalchemy import SQLAlchemy
-from config import BaseConfig
+from flask import Flask, render_template, request
 
+from .db import db
+from .models import Post
 
 app = Flask(__name__)
-app.config.from_object(BaseConfig)
-db = SQLAlchemy(app)
-
-
-from models import *
+app.config.from_pyfile('config.py')
+db.init_app(app)
 
 
 @app.route('/', methods=['GET', 'POST'])
