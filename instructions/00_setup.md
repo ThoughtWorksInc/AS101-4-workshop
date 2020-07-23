@@ -1,9 +1,8 @@
 # Getting Started
 
-## TODO
+## Prerequisites
 
-- check instructions for pulling all docker containers
-- this installs from a script, we should really fix it so it installs from brew instead.
+If you haven't already done so, you will need to follow the [Setup Instructions](https://github.com/derwent-m/sample-flask-app/blob/master/instructions/00_setup.md) before continuing
 
 ## Requirements
 
