@@ -3,7 +3,7 @@ import os
 
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 SECRET_KEY = "changeme"
-DEBUG = os.environ['DEBUG']
+DEBUG = os.environ.get('DEBUG', False)
 DB_NAME = "postgres"
 DB_USER = "postgres"
 DB_PASS = "postgres"
