@@ -1,24 +1,53 @@
 # Exercise 3 - CI/CD
 
-## TODO
+This repository has a GitHub Action workflow in `.github/workflows/lint_test.yml`. This file tells
+GitHub what to do each time a commit is pushed. In this example, we're simply running `flake8` on
+the web directory.
 
-- rewrite this to use GitHub Actions
+In this exercise, we will modify this repository's workflows to add a second workflow definition
+which automatically scans the repo with Hawkeye.
 
-## 03-01 Install the build server
+You can read more about GitHub workflow definitions [here](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions)
 
-Run the build server by following the instructions in the `sample-deploy-pipeline` Jenkins repository located [here](https://github.com/wilvk/sample-deploy-pipeline/blob/master/getting-started.md).
+## Create the workflow definition.
 
-## 03-02 Run the Flask application via the build server
+Go to `.github/workflows` and create a new workflow file `hawkeye.yml`
 
-The Flask application consists of two docker containers:
+See if you can create a workflow called `Hawkeye Scan` which
+- checks out the repo
+- runs `hawkeye scan --target web/` using the `derwentx/scanner-cli:latest` container.
 
-- A frontend website written in Python Flask
-- A backend database using PostgreSQL
+You will need to use the `jobs.<job_id>.container` syntax, but at the time of writing, I had to use a strange container definition, so here is a skeleton yaml file with the definition filled out for you.
 
-It is a simple message-posting application where messages entered by the user in the web interface are written to the PostgreSQL database. The web front-end shows all messages entered by users.
+```yml
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "scan"
+  scan:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
 
-Configure the CI/CD pipeline by following instructions available in [building-the-pipeline.md](https://github.com/wilvk/sample-deploy-pipeline/blob/master/building-the-pipeline.md)
+    container:
+      # This tells GitHub Actions to use our docker image
+      image: derwentx/scanner-cli:latest
+      # This tells GitHub Actions to mount the location where the code was checked out to /target
+      options: -v /__w/sample-flask-app/sample-flask-app:/target
 
-## 03-03 Install and run Hawkeye
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+    ...  # Fill in the rest.
+```
 
-Follow the instructions available in [adding-hawkeye.md](https://github.com/wilvk/sample-deploy-pipeline/blob/master/adding-hawkeye.md)
+When you've written your definition, simply push it to GitHub, and view the result in the Actions tab of the repo
+
+![actions](images/../../images/actions_tab.png)
+
+We expect the workflow to fail, since some of the dependencies are out of date.
+
+## Fix Hawkeye errors
+
+Try to modify your repository so that hawkeye does not show any critical errors locally.
+
+Re-build the app and verify that it still works before pushing.

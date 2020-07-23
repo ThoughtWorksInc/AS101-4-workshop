@@ -49,6 +49,7 @@ To see the sample app running, make sure you have docker-compose installed, then
 `docker-compose up --build`
 
 Then in your browser go to `localhost:8000`
+
 ## Stopping the Application
 
 To stop the application, from the command line enter `Control-C`.
@@ -90,7 +91,7 @@ This will prevent it installing Talisman for all the repositories under your hom
 
 For example:
 
-![](./images/1.png)
+![talisman_install](./images/1.png)
 
 ### Testing Talisman installed correctly
 
