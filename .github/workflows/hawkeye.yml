@@ -22,14 +22,11 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    # Installs python dependencies
-    - name: Pip Installer
-      uses: BSFishy/pip-action@v1
-      with:
-        # The packages to install from Pip
-        packages: flake8 pylint pytest
-        # A requirements file to install from
-        requirements: web/requirements.txt
+    - name: Install Python dependencies
+      run: |
+        pip3 install --upgrade pip
+        pip3 install -r web/requirements.txt; fi
+        pip3 install flake8 pylint pytest
     - name: Lint with Flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
