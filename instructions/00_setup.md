@@ -86,7 +86,7 @@ This will prevent it installing Talisman for all the repositories under your hom
 
 For example:
 
-![talisman_install](./images/1.png)
+![talisman_install](../images/1.png)
 
 ### Testing Talisman installed correctly
 
