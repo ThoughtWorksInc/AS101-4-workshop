@@ -1,4 +1,10 @@
-# Exercise 1 - Hawkeye
+# Exercise 1
+
+## Prerequisites
+
+If you haven't already done so, you will need to follow the [Setup Instructions](https://github.com/derwent-m/sample-flask-app/blob/master/instructions/00_setup.md) before continuing
+
+## Hawkeye
 
 We will use [Hawkeye](https://github.com/hawkeyesec/scanner-cli) to scan automatically scan the code base for
 
