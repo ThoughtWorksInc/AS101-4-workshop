@@ -16,13 +16,15 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - name: Pip Installer
-      uses: BSFishy/pip-action@v1
-      with:
-        # The packages to install from Pip
-        packages: flake8 pylint pytest
-        # A requirements file to install from
-        requirements: web/requirements.txt
+    - name: Install Python dependencies
+      run: |
+        sudo apt-get install gcc libpq-dev -y
+        sudo apt-get install python-dev  python-pip -y
+        sudo apt-get install python3-dev python3-pip python3-venv python3-wheel -y
+        pip3 install wheel
+        pip3 install --upgrade pip
+        pip3 install -r web/requirements.txt
+        pip3 install flake8 pylint pytest
     - name: Lint with Flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
