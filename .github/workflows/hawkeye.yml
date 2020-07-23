@@ -25,7 +25,7 @@ jobs:
     - name: Install Python dependencies
       run: |
         pip3 install --upgrade pip
-        pip3 install -r web/requirements.txt; fi
+        pip3 install -r web/requirements.txt
         pip3 install flake8 pylint pytest
     - name: Lint with Flake8
       run: |
