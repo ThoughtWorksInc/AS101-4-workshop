@@ -6,7 +6,7 @@ For this exercise, running the application is not necessary.
 
 ### 02-01 Talisman
 
-1. Follow the [Talisman installation instructions](00_setup.md#Installing_Talisman) in [Talisman.md](talisman.md)
+1. Follow the [Talisman installation instructions](00_setup.md#Installing_Talisman)
 
 2. In our sample application, create the file `web/config.py` in a text editor of your choice and add something like `password = 'hello'` to the file and save it.
 
