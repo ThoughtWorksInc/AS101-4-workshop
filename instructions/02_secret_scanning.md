@@ -16,7 +16,7 @@ Then do a git commit. e.g. `git commit -m "testing talisman"`
 
 If all is working, you should be prompted by talisman about a potential secret being checked-in.
 
-You can then unstage your changes and checkout all files to revert your local repository to it's previous state.
+4. You can then unstage your changes and checkout all files to revert your local repository to it's previous state.
 
 For example:
 
@@ -24,3 +24,5 @@ For example:
 git reset
 git checkout .
 ```
+
+5. Spend a few minutes experimenting with other (fake) secrets.  What does Talisman find?  What does it miss?
