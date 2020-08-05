@@ -6,7 +6,7 @@ If you haven't already done so, you will need to follow the [Setup Instructions]
 
 ## Hawkeye
 
-We will use [Hawkeye](https://github.com/hawkeyesec/scanner-cli) to scan automatically scan the code base for
+We will use [Hawkeye](https://github.com/hawkeyesec/scanner-cli) to scan automatically scan the code base for secrets and vulnerabilities. This is a useful tool to have in your pipeline, in order to prevent anyone in your team from accidentally committing secrets or vulnerabilities.
 
 **Note:** normally you would use the `hawkeyesec/scanner-cli:latest` docker image, however this is currently using an outdated version of the [safety](https://pypi.org/project/safety/) pypi package,so for this exercise I have created my own docker image at `derwentx/scanner-cli:latest` which has the latest version while I wait for the a request to go through. Do not use my docker image in production.
 
