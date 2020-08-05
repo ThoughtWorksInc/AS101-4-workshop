@@ -1,6 +1,6 @@
 # sample-flask-application
 
-This application is intended for use with the `sample-deploy-pipeline` Jenkins application located [here](https://github.com/wilvk/sample-deploy-pipeline).
+**Warning:** this repository deliberately contains vulnerabilities for the purpose of an information security training course, do not use the code from this repository in production.
 
 The application consists of two docker containers:
 
@@ -8,9 +8,6 @@ The application consists of two docker containers:
 - A backend database using PostgreSQL
 
 It is a simple message-posting application where messages entered by the user in the web interface are written to the PostgreSQL database. The web front-end shows all messages entered by users.
-
-**Warning:** this repository deliberately contains vulnerabilities, do not use the code from this
-repo in production.
 
 ## Instructions
 
