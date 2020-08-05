@@ -1,6 +1,6 @@
 # Exercise 4 - Handling secrets
 
-## TODO:
+## TODO
 
 - do this with Ansible vault,
 - If enough time maybe do GH Actions

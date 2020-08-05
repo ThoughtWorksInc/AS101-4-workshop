@@ -29,7 +29,6 @@ python-safety  critical  werkzeug 0.11.10      Werkzeug 0.15.0 refactors class:`
 
 </details>
 
-
 ## Exercise 3
 
 <details>
