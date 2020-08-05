@@ -26,3 +26,9 @@ For this exercise, running the application is not necessary.
    ```
 
 5. Spend a few minutes experimenting with other (fake) secrets.  What does Talisman find?  What does it miss?
+
+6. Let's pretend that one of the secrets that Talisman detected previously is a safe and valid secret that we're intending to commit. Use the output of Talisman to create a `.talismanrc` to allow this secret to be committed. The information you need is in the Talisman Report section, above the following message:
+
+  ```txt
+  If you are absolutely sure that you want to ignore the above files from talisman detectors, consider pasting the following format in .talismanrc file in the project root
+  ```
