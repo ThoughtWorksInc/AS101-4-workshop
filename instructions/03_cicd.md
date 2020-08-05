@@ -9,17 +9,21 @@ which automatically scans the repo with Hawkeye.
 
 You can read more about GitHub workflow definitions [here](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions)
 
-## Create the workflow definition.
+## Create the workflow definition
 
 Go to `.github/workflows` and create a new workflow file `hawkeye.yml`
 
 See if you can create a workflow called `Hawkeye Scan` which
+
 - checks out the repo
 - runs `hawkeye scan --target web/` using the `derwentx/scanner-cli:latest` container.
 
 You will need to use the `jobs.<job_id>.container` syntax, but at the time of writing, I had to use a strange container definition, so here is a skeleton yaml file with the definition filled out for you.
 
 ```yml
+name: ... # Name your action
+# Controls when the action will run. Triggers the workflow on push or pull request on any branch
+on: [push, pull_request]
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "scan"
