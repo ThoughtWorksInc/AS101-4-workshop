@@ -12,17 +12,17 @@ For this exercise, running the application is not necessary.
 
 3. Do a git add of the file. e.g. `git add web/config.py`.
 
-Then do a git commit. e.g. `git commit -m "testing talisman"`
+   Then do a git commit. e.g. `git commit -m "testing talisman"`
 
-If all is working, you should be prompted by talisman about a potential secret being checked-in.
+   If all is working, you should be prompted by talisman about a potential secret being checked-in.
 
 4. You can then unstage your changes and checkout all files to revert your local repository to it's previous state.
 
-For example:
+   For example:
 
-```sh
-git reset
-git checkout .
-```
+   ```sh
+   git reset
+   git checkout .
+   ```
 
 5. Spend a few minutes experimenting with other (fake) secrets.  What does Talisman find?  What does it miss?
