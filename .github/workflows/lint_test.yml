@@ -16,27 +16,16 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - name: Install Python dependencies
+    - name: build docker containers
       run: |
-        # Ubuntu requires a lot of hand holding to get Python 3 installed. :(
-        sudo apt-get update
-        sudo apt-get install gcc libpq-dev -y
-        sudo apt-get install python-dev  python-pip -y
-        sudo apt-get install python3-dev python3-pip python3-venv python3-wheel python3-setuptools -y
-        pip3 install wheel
-        pip3 install --upgrade pip
-        pip3 install -r web/requirements.txt
-        pip3 install flake8 pytest
-        # This tells GitHub Actions to add the PATH entry for pip binaries
-        echo "::add-path::${HOME}/.local/bin"
-    - name: Lint with Flake8
+        docker-compose build
+    - name: Lint web using flake8 in web docker container
       run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistic
+        docker-compose run web bash -c \
+          "flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics \
+           && flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics"
     - name: Basic smoke test
       run: |
         docker-compose up --build --detach
-        sleep 20
+        sleep 10
         curl --fail localhost:8000
