@@ -8,5 +8,4 @@ Werkzeug==0.11.15
 gunicorn==19.6.0
 itsdangerous==0.24
 psycopg2-binary==2.8.4
-flake8
-pytest
+-r 'requirements-dev.txt'
