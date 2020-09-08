@@ -2,17 +2,47 @@
 
 ## Requirements
 
+This workshop requires the following tools to be installed on your machine:
+
 - Docker
 - Docker-compose
 
-## Forking the repository
+The easiest way to install these on MacOS is using the
+[Homebrew package manager](https://docs.brew.sh/Installation).
 
-Make a git fork of this repository through the Github user interface. This will allow you to make commits and push changes to your own copy of the source code.
+See
+[these instructions](https://medium.com/crowdbotics/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3)
+for installing `docker`
 
-Then, make a clone of your fork of this repository to your local computer:
+`docker-compose` can be installed with the following terminal command
 
 ```bash
-git clone https://github.com/[REPLACE-WITH-YOUR-FORK]/sample-flask-app.git
+brew install docker-compose
+```
+
+## Pulling docker images
+
+This is the slowest step of the exercise, so it's best to start it first so that it can run in the
+background, and you can proceed to the next step while the images are downloading.
+
+```bash
+docker pull postgres:12.2  # from docker-compose.yml
+docker pull python:3.7  # from web/Dockerfile
+docker pull derwentx/scanner-cli:latest  # for exercise 1
+docker pull hawkeyesec/scanner-cli:latest  # for exercise 1
+```
+
+## Forking the repository
+
+Make a git fork of [this repository](https://github.com/derwent-m/sample-flask-app) through the
+Github user interface. This will allow you to make commits and push changes to your own copy of the
+source code.
+
+Then, make a clone of your fork of this repository to your local computer. In your fork, click the
+`⤓ Code` and copy either the `SSH` or `HTTPS` command into your terminal.
+
+```bash
+git clone https://github.com/[YOUR-GITHUB-USERNAME]/sample-flask-app.git
 ```
 
 change directory into your forked, cloned repository and make a note of the path.
@@ -22,88 +52,77 @@ cd sample-flask-app
 pwd
 ```
 
+the `pwd` command will output your current directory.
+
 ```txt
 /path/to/your/sample-flask-app
 ```
 
-## Pulling docker images
+## Using the Echo app
 
-This is the slowest step of the exercise, so it's best to start it first, so that it can run in the background.
+### Starting the Application
 
-```bash
-docker pull postgres:12.2  # from docker-compose.yml
-docker pull python:3.7  # from web/Dockerfile
-docker pull derwentx/scanner-cli:latest  # for exercise 1
-docker pull hawkeyesec/scanner-cli:latest  # for exercise 1
-```
-
-## Starting the Application
-
-To see the sample app running, make sure you have docker-compose installed, then run the following command:
+To see the sample app running, run the following terminal command:
 
 `docker-compose up --build`
 
 Then in your browser go to `localhost:8000`
 
-## Stopping the Application
+If everything is working, you should be able to submit basic messages to the site, and they will
+show up in the messages feed.
 
-To stop the application, from the command line enter `Control-C`.
+### Stopping the Application
 
-**Note:**
+To stop the application, go back to the terminal from which you started the application, and type
+`Control-C`.
 
-If starting the application, you should stop the application before proceeding with the [sample-deploy-pipeline](https://github.com/wilvk/sample-deploy-pipeline) instructions as we will spin up this application in a GitHub Actions pipeline.
+## Talisman
 
-## Installing Talisman
+[Talisman](https://github.com/thoughtworks/talisman) is a Secrets Scanning application for git to
+prevent committing and pushing of secrets to your repository.
 
-[Talisman](https://github.com/thoughtworks/talisman) is a Secrets Scanning application for git to prevent committing and pushing of secrets to your git source control server.
+It works by using git hooks in the local copy of the source code you are working on. Installing
+Talisman on your local copy of a repository won't affect other users of the same repository, however
+if you have other git hooks installed, there are extra steps required for them to all play nicely.
 
-It works by using git hooks into the local copy of the source code you are working on.
+If you're not sure about Talisman, you can install it
+[on each repository individually](https://github.com/thoughtworks/talisman#installation-to-a-single-project).
+There are also instructions to
+[install it globally](https://github.com/thoughtworks/talisman#installation-as-a-global-hook-template)
 
-We want to run Talisman on this repository to scan it for secrets.
-
-### Downloading Talisman
-
-Run the following command:
-
-```bash
-curl --silent \
-https://raw.githubusercontent.com/thoughtworks/talisman/master/global_install_scripts/install.bash \
-  -o /tmp/install_talisman.bash && /bin/bash /tmp/install_talisman.bash
-```
-
-This command comes from the official [Talisman instructions](https://github.com/thoughtworks/talisman#installation-as-a-global-hook-template
-)
-
-It will download and run an install script to load the Talisman binaries for our specific Operating System.
-
-### Configuring Talisman as a global hook template
-
-At the prompt for what local repositories to add the hook to, enter the path listed by `pwd` above for your repository.
-
-This will prevent it installing Talisman for all the repositories under your home path.
-
-For example:
-
-![talisman_install](../images/1.png)
+You will need to use of these sets of instructions to install talisman into the `sample-flask-app`
+repo so that we can scan it for secrets in the exercises.
 
 ### Testing Talisman installed correctly
 
-From the command prompt, enter `talisman`. It should return a list of command options.
-
-If this step fails, verify that Talisman has set an environment variable called `$TALISMAN_HOME` in your bash profile that points to the home path of Talisman on your system.
-
-This needs to be present in your resource file (`.bashrc`, `.bash_profile`, `.zshrc`, etc) for Talisman to run. You may need to either source your bash profile or restart the terminal to make sure it is there.
-
-You can check it is present by running:
+We can verify that Talisman is installed into the `sample-flask-app` repository by viewing the
+`.git/hooks/` folder. Open up a terminal in your `sample-flask-app` repository and check with
 
 ```bash
-$ env | grep TALISMAN_HOME
-TALISMAN_HOME=/Users/willvk/.talisman/bin
+ls -al .git/hooks/
 ```
 
-If it's not present add it with:
+If you've installed talisman globally, you should see a symlink entry which looks like this
+
+```txt
+pre-commit -> /Users/derwent/.talisman/bin/talisman_hook_script
+```
+
+If you've installed talisman to this repo only, you should see a single executable file entry which
+looks like this
+
+```txt
+pre-push
+```
+
+To verify that the pre-push binary is indeed talisman, you can run
 
 ```bash
-echo "TALISMAN_HOME=$HOME/.talisman/bin" >> ~/.bashrc
-source  ~/.bashrc
+.git/hooks/pre-push -v
+```
+
+which should output something like
+
+```txt
+talisman v0.3.2
 ```
