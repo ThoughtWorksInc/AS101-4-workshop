@@ -86,12 +86,41 @@ Talisman on your local copy of a repository won't affect other users of the same
 if you have other git hooks installed, there are extra steps required for them to all play nicely.
 
 If you're not sure about Talisman, you can install it
-[on each repository individually](https://github.com/thoughtworks/talisman#installation-to-a-single-project).
-There are also instructions to
-[install it globally](https://github.com/thoughtworks/talisman#installation-as-a-global-hook-template)
+[on each repository individually](#installation-to-a-single-project). There are also instructions to
+[install it globally](#installation-as-a-global-hook-template)
 
 You will need to use of these sets of instructions to install talisman into the `sample-flask-app`
 repo so that we can scan it for secrets in the exercises.
+
+### Installation to a single project
+
+Talisman contains
+[instructions](https://github.com/thoughtworks/talisman#installation-to-a-single-project) for
+installing to a single repository, however these instructions install a version of Talisman that is
+2 years out of date and is incompatible with these exercises.
+
+I have made some modification to install.sh which are currently being reviewed in this
+[pull request](https://github.com/thoughtworks/talisman/pull/249) which install a newer `talisman`
+binary and allow you to install talisman as a `pre-commit` hook instead of a `pre-push` hook.
+
+While that's being reviewed, you can use these instructions instead:
+
+```bash
+# Download the talisman installer script
+curl https://raw.githubusercontent.com/derwent-m/talisman/master/install.sh > ~/install-talisman.sh
+chmod +x ~/install-talisman.sh
+```
+
+```bash
+# Install to a single project as a pre-commit hook
+cd sample-flask-app # if you're not already in this directory
+~/install-talisman.sh pre-commit
+```
+
+### Installation as a Global Hook Template
+
+Follow these instruction to
+[install Talisman globally](https://github.com/thoughtworks/talisman#installation-as-a-global-hook-template) only if you're confident that Talisman won't break your existing git hooks.
 
 ### Testing Talisman installed correctly
 
@@ -112,17 +141,13 @@ If you've installed talisman to this repo only, you should see a single executab
 looks like this
 
 ```txt
-pre-push
+pre-commit
 ```
 
 To verify that the pre-push binary is indeed talisman, you can run
 
 ```bash
-.git/hooks/pre-push -v
+TALISMAN_DEBUG=true .git/hooks/pre-commit
 ```
 
-which should output something like
-
-```txt
-talisman v0.3.2
-```
+Which should output some talisman debug info.
