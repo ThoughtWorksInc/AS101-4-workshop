@@ -1,13 +1,14 @@
 # Exercise 3 - CI/CD
 
 This repository has a GitHub Action workflow in `.github/workflows/lint_test.yml`. This file tells
-GitHub what to do each time a commit is pushed. In this example, we're simply running `flake8` on
-the web directory.
+GitHub what to do each time a commit / pull request is submitted. In this example, we're simply
+running `flake8` inside the `web` docker container.
 
 In this exercise, we will modify this repository's workflows to add a second workflow definition
 which automatically scans the repo with Hawkeye.
 
-You can read more about GitHub workflow definitions [here](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions)
+You can read more about GitHub workflow definitions
+[here](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions)
 
 ## Create the workflow definition
 
@@ -18,7 +19,9 @@ See if you can create a workflow called `Hawkeye Scan` which
 - checks out the repo
 - runs `hawkeye scan --target web/` using the `derwentx/scanner-cli:latest` container.
 
-You will need to use the `jobs.<job_id>.container` syntax, but at the time of writing, I had to use a strange container definition, so here is a skeleton yaml file with the definition filled out for you.
+You will need to use the `jobs.<job_id>.container` syntax, but at the time of writing, I had to use
+a strange container definition, so here is a skeleton yaml file with the definition filled out for
+you.
 
 ```yml
 name: ... # Name your action
@@ -44,7 +47,8 @@ jobs:
     ...  # Fill in the rest.
 ```
 
-When you've written your definition, simply push it to GitHub, and view the result in the Actions tab of the repo
+When you've written your definition, simply push it to GitHub, and view the result in the Actions
+tab of the repo
 
 ![actions](images/../../images/actions_tab.png)
 
