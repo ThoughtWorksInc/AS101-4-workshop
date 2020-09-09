@@ -18,7 +18,7 @@ For this exercise, running the application is not necessary.
    file and save it. e.g.
    `echo 'awsSecretKey=c64e8c79aacf5ddb02f1274db2d973f363f4f553ab1692d8d203b4cc09692f79' > danger.pem`
 
-1. Do a git add of the file. e.g. `git add web/config.py`.
+1. Do a git add of the file. e.g. `git add danger.pem`.
 
    Then do a git commit. e.g. `git commit -m "testing talisman"`
 

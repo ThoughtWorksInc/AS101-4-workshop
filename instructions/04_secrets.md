@@ -2,7 +2,7 @@
 
 ## TODO
 
-- do this with Ansible vault,
+- do this with Ansible Vault or https://secrethub.io/,
 - If enough time maybe do GH Actions
 
 ## 04-01 - Remove secrets in code
