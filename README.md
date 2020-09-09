@@ -1,6 +1,6 @@
-# sample-flask-application
+# AppSec 101 Module 4 Workshop: Sample Flask Application
 
-**Warning:** this repository deliberately contains vulnerabilities for the purpose of an information security training course, do not use the code from this repository in production.
+<span style="color:red; font-weight: bold">Warning:</span> this repository deliberately contains vulnerabilities for the purpose of an information security training course, do not use the code from this repository in production.
 
 The application consists of two docker containers:
 
