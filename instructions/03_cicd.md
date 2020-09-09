@@ -38,7 +38,7 @@ jobs:
       # This tells GitHub Actions to use our docker image
       image: derwentx/scanner-cli:latest
       # This tells GitHub Actions to mount the location where the code was checked out to /target
-      options: -v /__w/sample-flask-app/sample-flask-app:/target
+      options: -v /__w/as101-4-workshop/as101-4-workshop:/target
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:

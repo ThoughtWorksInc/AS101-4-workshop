@@ -34,7 +34,7 @@ docker pull hawkeyesec/scanner-cli:latest  # for exercise 1
 
 ## Forking the repository
 
-Make a git fork of [this repository](https://github.com/derwent-m/sample-flask-app) through the
+Make a git fork of [this repository](https://github.com/derwent-m/as101-4-workshop) through the
 Github user interface. This will allow you to make commits and push changes to your own copy of the
 source code.
 
@@ -42,20 +42,20 @@ Then, make a clone of your fork of this repository to your local computer. In yo
 `⤓ Code` and copy either the `SSH` or `HTTPS` command into your terminal.
 
 ```bash
-git clone https://github.com/[YOUR-GITHUB-USERNAME]/sample-flask-app.git
+git clone https://github.com/[YOUR-GITHUB-USERNAME]/as101-4-workshop.git
 ```
 
 change directory into your forked, cloned repository and make a note of the path.
 
 ```bash
-cd sample-flask-app
+cd as101-4-workshop
 pwd
 ```
 
 the `pwd` command will output your current directory.
 
 ```txt
-/path/to/your/sample-flask-app
+/path/to/your/as101-4-workshop
 ```
 
 ## Using the Echo app
@@ -89,7 +89,7 @@ If you're not sure about Talisman, you can install it
 [on each repository individually](#installation-to-a-single-project). There are also instructions to
 [install it globally](#installation-as-a-global-hook-template)
 
-You will need to use of these sets of instructions to install talisman into the `sample-flask-app`
+You will need to use of these sets of instructions to install talisman into the `as101-4-workshop`
 repo so that we can scan it for secrets in the exercises.
 
 ### Installation to a single project
@@ -113,7 +113,7 @@ chmod +x ~/install-talisman.sh
 
 ```bash
 # Install to a single project as a pre-commit hook
-cd sample-flask-app # if you're not already in this directory
+cd as101-4-workshop # if you're not already in this directory
 ~/install-talisman.sh pre-commit
 ```
 
@@ -124,8 +124,8 @@ Follow these instruction to
 
 ### Testing Talisman installed correctly
 
-We can verify that Talisman is installed into the `sample-flask-app` repository by viewing the
-`.git/hooks/` folder. Open up a terminal in your `sample-flask-app` repository and check with
+We can verify that Talisman is installed into the `as101-4-workshop` repository by viewing the
+`.git/hooks/` folder. Open up a terminal in your `as101-4-workshop` repository and check with
 
 ```bash
 ls -al .git/hooks/
