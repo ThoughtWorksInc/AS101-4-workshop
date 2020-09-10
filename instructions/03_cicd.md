@@ -10,6 +10,11 @@ which automatically scans the repo with Hawkeye.
 You can read more about GitHub workflow definitions
 [here](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions)
 
+## Prerequisites
+
+If you haven't already done so, you will need to follow the [Setup Instructions](00_setup.md) before
+continuing
+
 ## Create the workflow definition
 
 Go to `.github/workflows` and create a new workflow file `hawkeye.yml`

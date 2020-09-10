@@ -2,9 +2,8 @@
 
 ## Prerequisites
 
-If you haven't already done so, you will need to follow the
-[Setup Instructions](https://github.com/derwent-m/as101-4-workshop/blob/master/instructions/00_setup.md)
-before continuing
+If you haven't already done so, you will need to follow the [Setup Instructions](00_setup.md) before
+continuing
 
 ## Hawkeye
 

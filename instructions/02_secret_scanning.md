@@ -2,8 +2,7 @@
 
 ## Prerequisites
 
-If you haven't already done so, you will need to follow the
-[Setup Instructions](https://github.com/derwent-m/as101-4-workshop/blob/master/instructions/00_setup.md),
+If you haven't already done so, you will need to follow the [Setup Instructions](00_setup.md),
 ensuring the Talisman Git hook is installed before continuing.
 
 ## Secret detection with Git hooks

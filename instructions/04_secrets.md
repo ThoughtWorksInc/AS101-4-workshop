@@ -5,8 +5,11 @@
 - do this with Ansible Vault or https://secrethub.io/,
 - If enough time maybe do GH Actions
 
-## 04-01 - Remove secrets in code
+## Prerequisites
 
-We will update our code to remove secrets in code and instead, use Ansible Vault to source them.
+If you haven't already done so, you will need to follow the [Setup Instructions](00_setup.md) before
+continuing
 
-Follow the instructions in [handling-secrets.md](https://github.com/wilvk/sample-deploy-pipeline/blob/master/handling-secrets.md).
+## Remove secrets in code
+
+We will update our code to remove secrets in code and instead, use a secret manager to source them.

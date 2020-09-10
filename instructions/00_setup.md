@@ -34,9 +34,8 @@ docker pull hawkeyesec/scanner-cli:latest  # for exercise 1
 
 ## Forking the repository
 
-Make a git fork of [this repository](https://github.com/derwent-m/as101-4-workshop) through the
-Github user interface. This will allow you to make commits and push changes to your own copy of the
-source code.
+Make a git fork of this repository through the Github user interface. This will allow you to make
+commits and push changes to your own copy of the source code.
 
 Then, make a clone of your fork of this repository to your local computer. In your fork, click the
 `⤓ Code` and copy either the `SSH` or `HTTPS` command into your terminal.
@@ -120,7 +119,8 @@ cd as101-4-workshop # if you're not already in this directory
 ### Installation as a Global Hook Template
 
 Follow these instruction to
-[install Talisman globally](https://github.com/thoughtworks/talisman#installation-as-a-global-hook-template) only if you're confident that Talisman won't break your existing git hooks.
+[install Talisman globally](https://github.com/thoughtworks/talisman#installation-as-a-global-hook-template)
+only if you're confident that Talisman won't break your existing git hooks.
 
 ### Testing Talisman installed correctly
 
