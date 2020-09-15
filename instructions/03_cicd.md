@@ -13,23 +13,31 @@ You can read more about GitHub workflow definitions
 ## Prerequisites
 
 If you haven't already done so, you will need to follow the [Setup Instructions](00_setup.md) before
-continuing
+continuing. In particular, ensure that you have
+[forked this repository](00_setup.md#forking-the-repository).
 
 ## Create the workflow definition
 
 Go to `.github/workflows` and create a new workflow file `hawkeye.yml`
 
-See if you can create a workflow called `Hawkeye Scan` which
+See if you can create a workflow called `Hawkeye Scan` which has the following steps
 
-- checks out the repo
-- runs `hawkeye scan --target web/` using the `derwentx/scanner-cli:latest` container.
+1. checks out the repo
+2. runs `hawkeye scan --target web/` using the `scanner-cli` container.
 
-You will need to use the `jobs.<job_id>.container` syntax, but at the time of writing, I had to use
-a strange container definition, so here is a skeleton yaml file with the definition filled out for
-you.
+For step two, You will need to use the
+[`jobs.<job_id>.container`](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idcontainer)
+syntax to run a step in the `scanner-cli` container. At the time of writing, it was necessary to use the
+[jobs.<job_id>.container.options](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idcontaineroptions) syntax
+to mount the cloned repository inside the container with
+`-v /__w/as101-4-workshop/as101-4-workshop:/target`, so a skeleton yaml file with the
+definition filled out for you has been provided below.
+
+All you need to do is fill out the workflow name and define the second step of the job. Because we have configured the job to use the `scanner-cli` image, you should be able to run the `hawkeye` binary directly in this step. You step definition should only require you to use the run
+[`run`](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsrun) keyword to execute `hawkeye scan --target web/`
 
 ```yml
-name: ... # Name your action
+name: ... # <Name your workflow>
 # Controls when the action will run. Triggers the workflow on push or pull request on any branch
 on: [push, pull_request]
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -47,9 +55,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
-    ...  # Fill in the rest.
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - ... # <Fill out the second step>
 ```
 
 When you've written your definition, simply push it to GitHub, and view the result in the Actions
