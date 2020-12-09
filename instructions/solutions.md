@@ -53,7 +53,7 @@ jobs:
 
     container:
       # This tells GitHub Actions to use our docker image
-      image: derwentx/scanner-cli:latest
+      image: hawkeyesec/scanner-cli:latest
       # This tells GitHub Actions to mount the location where the code was checked out to /target
       options: -v /__w/as101-4-workshop/as101-4-workshop:/target
 

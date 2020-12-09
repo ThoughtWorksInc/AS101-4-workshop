@@ -28,7 +28,6 @@ background, and you can proceed to the next step while the images are downloadin
 ```bash
 docker pull postgres:12.2  # from docker-compose.yml
 docker pull python:3.7  # from web/Dockerfile
-docker pull derwentx/scanner-cli:latest  # for exercise 1
 docker pull hawkeyesec/scanner-cli:latest  # for exercise 1
 ```
 
@@ -84,6 +83,8 @@ It works by using git hooks in the local copy of the source code you are working
 Talisman on your local copy of a repository won't affect other users of the same repository, however
 if you have other git hooks installed, there are extra steps required for them to all play nicely.
 
+If you don't know whether you already have Talisman installed, you can check using [these instructions](#testing-talisman-installed-correctly)
+
 If you're not sure about Talisman, you can install it
 [on each repository individually](#installation-to-a-single-project). There are also instructions to
 [install it globally](#installation-as-a-global-hook-template)
@@ -93,20 +94,13 @@ repo so that we can scan it for secrets in the exercises.
 
 ### Installation to a single project
 
-Talisman contains
+Talisman provides
 [instructions](https://github.com/thoughtworks/talisman#installation-to-a-single-project) for
-installing to a single repository, however these instructions install a version of Talisman that is
-2 years out of date and is incompatible with these exercises.
-
-I have made some modification to install.sh which are currently being reviewed in this
-[pull request](https://github.com/thoughtworks/talisman/pull/249) which install a newer `talisman`
-binary and allow you to install talisman as a `pre-commit` hook instead of a `pre-push` hook.
-
-While that's being reviewed, you can use these instructions instead:
+installing to a single repository:
 
 ```bash
 # Download the talisman installer script
-curl https://raw.githubusercontent.com/derwent-m/talisman/master/install.sh > ~/install-talisman.sh
+curl https://raw.githubusercontent.com/thoughtworks/talisman/master/install.sh > ~/install-talisman.sh
 chmod +x ~/install-talisman.sh
 ```
 

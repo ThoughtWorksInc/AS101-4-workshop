@@ -33,9 +33,9 @@ For this exercise, running the application is not necessary.
 
    Your `.talismanrc` should allow you to commit file without warnings.
 
-1. Spend a few minutes experimenting with other (fake) secrets. What does Talisman find? What does
+1. Spend a few minutes adding other (fake) secrets. What does Talisman find? What does
    it miss?
-   
+
 1. You can then unstage your changes and checkout all files to revert your local repository to its
    previous state.
 
