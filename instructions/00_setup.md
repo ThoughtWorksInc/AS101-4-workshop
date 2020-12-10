@@ -56,6 +56,17 @@ the `pwd` command will output your current directory.
 /path/to/your/as101-4-workshop
 ```
 
+## Git Authentication
+
+There are several ways you can clone this repository. The default is https (remote url looks like `https://github.com/ThoughtWorksInc/AS101-4-workshop.git`) but you can also use ssh (remote looks like `git@github.com:ThoughtWorksInc/AS101-4-workshop.git`). You can check which one your are using with `git remote -v`
+
+If you are using an SSH origin, and have multiple git accounts, you may want to review [these instructions](https://sites.google.com/thoughtworks.com/infosec-hub/awareness-deprecated/git-account-segregation) on git account segregation. and your git config for this repository has `core.sshCommand` set to `ssh -i ~/.ssh/your_thoughtworks_github_ssh_key`.
+
+If you are using an HTTPS origin, ensure you have an access token which has the following scopes:
+
+- repo
+- workflows
+
 ## Using the Echo app
 
 ### Starting the Application
