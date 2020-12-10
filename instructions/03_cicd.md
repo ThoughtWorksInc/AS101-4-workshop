@@ -2,7 +2,7 @@
 
 This repository has a GitHub Action workflow in `.github/workflows/lint_test.yml`. This file tells
 GitHub what to do each time a commit / pull request is submitted. In this example, we're simply
-running `flake8` inside the `web` docker container.
+running `flake8` (Python linter) inside the `web` docker container.
 
 In this exercise, we will modify this repository's workflows to add a second workflow definition
 which automatically scans the repo with Hawkeye.
@@ -14,15 +14,15 @@ You can read more about GitHub workflow definitions
 
 If you haven't already done so, you will need to follow the [Setup Instructions](00_setup.md) before
 continuing. In particular, ensure that you have
-[forked this repository](00_setup.md#forking-the-repository).
+[forked this repository](00_setup.md#forking-the-repository) (please do not push solutions to this exercise to the `thoughtworksinc` repository)
 
 ## Create the workflow definition
 
-Go to `.github/workflows` and create a new workflow file `hawkeye.yml`
+Go to `.github/workflows` and create a new workflow file `hawkeye.yml` You can use the template yaml below as a starting point.
 
 See if you can create a workflow called `Hawkeye Scan` which has the following steps
 
-1. checks out the repo
+1. checks out the repo (`uses: actions/checkout@v2`)
 2. runs `hawkeye scan --target web/` using the `scanner-cli` container.
 
 For step two, You will need to use the
@@ -60,7 +60,7 @@ jobs:
       - ... # <Fill out the second step>
 ```
 
-When you've written your definition, simply push it to GitHub, and view the result in the Actions
+When you've written your definition, simply push it to your fork on GitHub, and view the result in the Actions
 tab of the repo
 
 ![actions](images/../../images/actions_tab.png)
