@@ -7,7 +7,7 @@ continuing
 
 ## Hawkeye
 
-We will use [Hawkeye](https://github.com/hawkeyesec/scanner-cli) to scan automatically scan the code
+We will use [Hawkeye](https://github.com/hawkeyesec/scanner-cli) to automatically scan the code
 base for secrets and vulnerabilities. This is a useful tool to have in your pipeline, in order to
 prevent anyone in your team from accidentally committing secrets or vulnerabilities.
 
