@@ -100,7 +100,7 @@ If you're not sure about Talisman, you can install it
 [on each repository individually](#installation-to-a-single-project). There are also instructions to
 [install it globally](#installation-as-a-global-hook-template)
 
-You will need to use of these sets of instructions to install talisman into the `as101-4-workshop`
+You will need to use one of these sets of instructions to install talisman into the `as101-4-workshop`
 repo so that we can scan it for secrets in the exercises.
 
 ### Installation to a single project
