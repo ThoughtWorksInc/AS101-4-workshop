@@ -7,18 +7,29 @@ This workshop requires the following tools to be installed on your machine:
 - Docker
 - Docker-compose
 
-The easiest way to install these on MacOS is using the
+Check if you already have these tools installed:
+```bash
+docker version
+docker-compose version
+```
+If they are, you can skip to [Pulling docker images](#pulling-docker-images).
+
+Otherwise, the easiest way to install them on MacOS is to install [Docker Desktop for Mac](https://docs.docker.com/docker-for-mac/install/) (includes `docker-compose`) via the
 [Homebrew package manager](https://docs.brew.sh/Installation).
 
-See
-[these instructions](https://medium.com/crowdbotics/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3)
+```bash
+brew install --cask docker
+```
+
+Alternatively, if you would like to only install the command line tools:
+
+* See [these instructions](https://medium.com/crowdbotics/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3)
 for installing `docker`
 
-`docker-compose` can be installed with the following terminal command
-
-```bash
-brew install docker-compose
-```
+* `docker-compose` can be installed with the following terminal command
+    ```bash
+    brew install docker-compose
+    ```
 
 ## Pulling docker images
 
