@@ -12,7 +12,7 @@ Check if you already have these tools installed:
 docker version
 docker-compose version
 ```
-If they are, you can skip to [Pulling docker images](#pulling-docker-images).
+If they are, you can skip to [Pulling Docker images](#pulling-docker-images).
 
 Otherwise, the easiest way to install them on MacOS is to install [Docker Desktop for Mac](https://docs.docker.com/docker-for-mac/install/) (includes `docker-compose`) via the
 [Homebrew package manager](https://docs.brew.sh/Installation).
@@ -31,7 +31,7 @@ for installing `docker`
     brew install docker-compose
     ```
 
-## Pulling docker images
+## Pulling Docker images
 
 This is the slowest step of the exercise, so it's best to start it first so that it can run in the
 background, and you can proceed to the next step while the images are downloading.
@@ -54,14 +54,14 @@ Then, make a clone of your fork of this repository to your local computer. In yo
 git clone https://github.com/[YOUR-GITHUB-USERNAME]/as101-4-workshop.git
 ```
 
-change directory into your forked, cloned repository and make a note of the path.
+Change directory into your forked, cloned repository and make a note of the path.
 
 ```bash
 cd as101-4-workshop
 pwd
 ```
 
-the `pwd` command will output your current directory.
+The `pwd` command will output your current directory.
 
 ```txt
 /path/to/your/as101-4-workshop
@@ -167,3 +167,43 @@ TALISMAN_DEBUG=true .git/hooks/pre-commit
 ```
 
 Which should output some talisman debug info.
+
+### Ansible (Required for [Secrets](instructions/04_secrets.md) exercise)
+
+There are two options to install ansible. Note that ansible installation is time-consuming (can take half an hour or more).
+a) Installing ansible globally. For this you can go and follow [instructions](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#from-pip) specified on the ansible official site. 
+b) Installing ansible in a Python virtual environment via virtualenv
+Insall pyenv (Python version management tool) and pyenv-virtualenv (a plugin to manage Python virtual environments on pyenv) via brew
+```
+brew install pyenv
+brew install pyenv-virtualenv
+```
+Update your bash configuration file again like so and restart the terminal
+```
+echo ‘export PYENV_ROOT=”$HOME/.pyenv”’ >> ~/.bash_profile
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile
+echo ‘eval “$(pyenv virtualenv-init -)”’ >> ~/.bash_profile
+```
+
+
+Create a new Python virtual environment for the version of Python you want. We are using 3.8.5 in this example.
+```
+pyenv install 3.8.5
+pyenv virtualenv 3.8.5 <your-virtual-env-name>
+```
+Set the local Python environment in your forked project directory
+```
+cd <path-to-your-directory>
+pyenv local <your-virtual-env-name>
+```
+To confirm that you have the correct version of Python running in pyenv:
+TBD
+```
+pyenv -V
+```
+
+Install Ansible into your virtual Python environment
+```
+pip install ansible
+```
