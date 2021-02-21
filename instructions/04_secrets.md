@@ -13,6 +13,7 @@ continuing.
 We will update our code to remove secrets in code and instead, use a secret manager to source them.
 
 1. Encrypting sensitive variables
+
    Go to your forked repo directory and create an encrypted file with credentials for postgres in it:
    ```
    ansible-vault create env_secrets
