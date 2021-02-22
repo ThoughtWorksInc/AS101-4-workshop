@@ -18,7 +18,7 @@ We will update our code to remove secrets in code and instead, use a secret mana
    ```
    ansible-vault create env_secrets
    ```
-   You'd be asked to create a password for ansible vault. Make sure it's a strong password and store it somewhere secure, e.g. using a password manager.
+   You'd be asked to create a password for Ansible Vault. Make sure it's a strong password and store it somewhere secure, e.g. using a password manager.
   
    Once the password is entered, you'll need to paste the content of what you want to encrypt. See the format below, but make sure to replace the values with the Postgres values from the docker-compose.yml file.
    
