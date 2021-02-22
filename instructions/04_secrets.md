@@ -40,9 +40,12 @@ Secrets would be removed from the code and sourced using a secret manager.
    ```
    ansible-vault edit env_secrets
    ```  
+   
    By default, `vi` editor would be used. You can pass in your preferred editor like so:
 
-   `EDITOR='nano' ansible-vault edit env_secrets`
+   ```
+   EDITOR='nano' ansible-vault edit env_secrets
+   ```
   
    For both of these commands you'd be asked to enter a password. For ease of use you could store the ansible-vault password locally, just make sure this is not in any of the repo directories. To view the encrypted file - pass in the location of the vault password:
 
