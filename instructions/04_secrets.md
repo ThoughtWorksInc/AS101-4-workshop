@@ -47,7 +47,7 @@ Secrets would be removed from the code and sourced using a secret manager.
    EDITOR='nano' ansible-vault edit env_secrets
    ```
   
-   For both of these commands you'd be asked to enter a password. For ease of use you could store the ansible-vault password locally, just make sure this is not in any of the repo directories. To view the encrypted file - pass in the location of the vault password:
+   For both of these commands you'd be asked to enter a password. For ease of use you can store the ansible-vault password locally making sure it is not inside your existing repo directories. You can pass in the location of the vault password via `--vault-password-file` parameter:
 
    `ansible-vault view --vault-password-file=<path_to_vault_password> env_secrets`
 
