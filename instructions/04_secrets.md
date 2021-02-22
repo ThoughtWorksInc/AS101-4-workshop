@@ -79,12 +79,9 @@ Secrets would be removed from the code and sourced using a secret manager.
     ```
    docker-compose rm -f
    docker-compose pull  
-   docker-compose up --build -d
+   docker-compose up --build
    ```
-
-   Once test passed, you can stop the containers:
-   `docker-compose stop -t 1`
-
+   
    Commit and push your changes. Note, you'd need to update the .talismanrc file in order to commit your changes.
 
 1. Running in a pipeline
