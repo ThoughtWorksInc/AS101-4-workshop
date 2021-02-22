@@ -10,7 +10,7 @@ continuing. In particular, ensure Ansible is installed.
 
 ## Remove secrets in code
 
-We will update our code to remove secrets in code and instead, use a secret manager to source them.
+Secrets would be removed from the code and sourced using a secret manager.
 
 1. Encrypting sensitive variables
 
