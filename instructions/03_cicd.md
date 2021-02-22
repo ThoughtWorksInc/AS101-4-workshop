@@ -14,7 +14,7 @@ You can read more about GitHub workflow definitions
 
 If you haven't already done so, you will need to follow the [Setup Instructions](00_setup.md) before
 continuing. In particular, ensure that you have
-[forked this repository](00_setup.md#forking-the-repository) (please do not push solutions to this exercise to the `thoughtworksinc` repository)
+[forked this repository](00_setup.md#forking-the-repository) (please do not push solutions to this exercise to the `thoughtworksinc` repository).
 
 ## Create the workflow definition
 
