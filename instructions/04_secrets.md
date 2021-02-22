@@ -6,7 +6,7 @@
 ## Prerequisites
 
 If you haven't already done so, you will need to follow the [Setup Instructions](00_setup.md) before
-continuing.
+continuing. In particular, ensure Ansible is installed.
 
 ## Remove secrets in code
 
