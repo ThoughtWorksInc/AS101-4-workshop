@@ -52,7 +52,7 @@ Secrets would be removed from the code and sourced using a secret manager.
    `ansible-vault view --vault-password-file=<path_to_vault_password> env_secrets`
 
 
-1. The encrypted variables for postgress then need to be referenced in the docker-compose.yml file:
+1. In the docker-compose.yml file reference the encrypted variables for Postgres:
 	
    ```
    POSTGRES_USER: ${POSTGRES_USER}
@@ -72,11 +72,9 @@ Secrets would be removed from the code and sourced using a secret manager.
   
    Note: `set +x` makes sure we are not logging out the value of the variables to the standard output.
 
-   To test what your docker-compose file will look like after the substitution run:
+   Use `docker-compose config` to test what your docker-compose.yml file will look like after the substitution.
 
-   `docker-compose config`
-
-   Rebuild the containers from scratch and test your system works as expected (there should not be any errors and you should be able to submit a new message).
+   Rebuild the containers from scratch and test that your system works as expected - there should not be any errors and you should be able to submit a new message).
 	
     ```
    docker-compose rm -f
@@ -91,7 +89,7 @@ Secrets would be removed from the code and sourced using a secret manager.
 
 1. Running in a pipeline
 
-   Notice that one of your workflows just failed - lint_test. The reason for this is that you've extracted the postgres variables, but haven't specified where these values should be taken from. When we run our application locally, we've been exposing the variable values through the shell. 
+   Notice that one of your workflows `lint_test` just failed. The reason for this is that you've extracted the postgres variables, but haven't specified where these values should be taken from. When we run our application locally, we've been exposing the variable values through the shell. 
 We need to do a similar thing for the pipeline.
 
    First of all, you'd need to provide a source of the vault password.
