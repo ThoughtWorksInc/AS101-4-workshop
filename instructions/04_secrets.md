@@ -41,7 +41,7 @@ Secrets would be removed from the code and sourced using a secret manager.
    ansible-vault edit env_secrets
    ```  
    
-   By default, `vi` editor would be used. You can pass in your preferred editor like so:
+   By default, `vi` editor would be used, but you can pass in your preferred editor like so:
 
    ```
    EDITOR='nano' ansible-vault edit env_secrets
