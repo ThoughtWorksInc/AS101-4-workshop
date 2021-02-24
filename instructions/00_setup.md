@@ -168,15 +168,20 @@ Which should output some talisman debug info.
 
 ## Ansible (Required for [Secrets](instructions/04_secrets.md) exercise)
 
-There are two options to install ansible. Note that ansible installation is time-consuming (can take half an hour or more).
-* Install Ansible globally by following [instructions](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#from-pip) specified on the ansible official site. 
-* Install Ansible in a Python virtual environment via `virtualenv`. You'll need to insall `pyenv` (Python version management tool) and `pyenv-virtualenv` (a plugin to manage Python virtual environments on pyenv) via brew.
+There are two options to install ansible: globally or locally. Note that ansible installation is time-consuming (can take half an hour or more).
 
-    ```
-    brew install pyenv
-    brew install pyenv-virtualenv
-    ```
-Update your bash configuration file again like so and restart the terminal
+###Installing Ansible globally 
+Follow [instructions](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#from-pip) specified on the ansible official site. 
+
+###Installing Ansible locally via `virtualenv`. 
+
+You'll need to insall `pyenv` (Python version management tool) and `pyenv-virtualenv` (a plugin to manage Python virtual environments on pyenv) via brew.
+
+```
+brew install pyenv
+brew install pyenv-virtualenv
+```
+Update your bash configuration file `~/.bash_profile` (or ` ~/.zshrc ` in case you use Zsh) by running the following in your terminal.
 
 ```
 echo ‘export PYENV_ROOT=”$HOME/.pyenv”’ >> ~/.bash_profile
@@ -184,22 +189,22 @@ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile
 echo ‘eval “$(pyenv virtualenv-init -)”’ >> ~/.bash_profile
 ```
-
+Run `source ~/.bash_profile` (or `source ~/.zshrc` if using Zsh) for the changes to take effect.
 
 Create a new Python virtual environment for the version of Python you want. We are using 3.8.5 in this example.
+
 ```
 pyenv install 3.8.5
 pyenv virtualenv 3.8.5 <your-virtual-env-name>
 ```
-Set the local Python environment in your forked project directory
+
+Set the local Python environment in your forked project directory.
 ```
 cd <path-to-your-directory>
 pyenv local <your-virtual-env-name>
 ```
-To confirm that you have the correct version of Python running in pyenv:
-TBD
+To confirm that you have the correct version of Python running in pyenv.
 ```
-pyenv -V
 ```
 
 Install Ansible into your virtual Python environment
