@@ -205,9 +205,14 @@ pyenv local <your-virtual-env-name>
 ```
 To confirm that you have the correct version of Python running in pyenv.
 ```
+python -V
 ```
+You should also see the newly created Python environment set in `.python-version` file in your forked repo directory.
 
-Install Ansible into your virtual Python environment
+Install Ansible into your virtual Python environment.
+
 ```
 pip install ansible
 ```
+
+To check that Ansible is isntalled correctly, run `ansible --version` and you should see Ansible version installed along with other information.
