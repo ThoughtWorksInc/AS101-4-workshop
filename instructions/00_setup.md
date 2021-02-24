@@ -169,14 +169,15 @@ Which should output some talisman debug info.
 ## Ansible (Required for [Secrets](instructions/04_secrets.md) exercise)
 
 There are two options to install ansible. Note that ansible installation is time-consuming (can take half an hour or more).
-a) Installing ansible globally. For this you can go and follow [instructions](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#from-pip) specified on the ansible official site. 
-b) Installing ansible in a Python virtual environment via virtualenv
-Insall pyenv (Python version management tool) and pyenv-virtualenv (a plugin to manage Python virtual environments on pyenv) via brew
-```
-brew install pyenv
-brew install pyenv-virtualenv
-```
+* Install Ansible globally by following [instructions](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#from-pip) specified on the ansible official site. 
+* Install Ansible in a Python virtual environment via `virtualenv`. You'll need to insall `pyenv` (Python version management tool) and `pyenv-virtualenv` (a plugin to manage Python virtual environments on pyenv) via brew.
+
+    ```
+    brew install pyenv
+    brew install pyenv-virtualenv
+    ```
 Update your bash configuration file again like so and restart the terminal
+
 ```
 echo ‘export PYENV_ROOT=”$HOME/.pyenv”’ >> ~/.bash_profile
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
