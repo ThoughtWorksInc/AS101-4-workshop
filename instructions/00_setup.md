@@ -170,10 +170,10 @@ Which should output some talisman debug info.
 
 There are two options to install ansible: globally or locally. Note that ansible installation is time-consuming (can take half an hour or more).
 
-###Installing Ansible globally 
+### Installing Ansible globally 
 Follow [instructions](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#from-pip) specified on the ansible official site. 
 
-###Installing Ansible locally via `virtualenv`. 
+### Installing Ansible locally via `virtualenv`. 
 
 You'll need to insall `pyenv` (Python version management tool) and `pyenv-virtualenv` (a plugin to manage Python virtual environments on pyenv) via brew.
 
