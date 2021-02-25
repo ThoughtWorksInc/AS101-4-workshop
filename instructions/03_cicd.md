@@ -60,7 +60,7 @@ jobs:
       - ... # <Fill out the second step>
 ```
 
-When you've written your definition, make sure you enabled workflows for your fork on GitHub as these are disabled by default. Then push your changes and view the result in the Actions tab of the repo. 
+When you've written your definition, make sure workflows are enabled for your fork on GitHub. Then push your changes and view the result in the Actions tab of the repo. 
 
 ![actions](images/../../images/actions_tab.png)
 
