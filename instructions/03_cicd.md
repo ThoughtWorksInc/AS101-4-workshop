@@ -61,7 +61,7 @@ jobs:
 ```
 
 When you've written your definition, simply push it to your fork on GitHub, and view the result in the Actions
-tab of the repo
+tab of the repo. You might need to enable workflows as these are disabled by default.
 
 ![actions](images/../../images/actions_tab.png)
 
