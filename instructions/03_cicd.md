@@ -8,7 +8,7 @@ In this exercise, we will modify this repository's workflows to add a second wor
 which automatically scans the repo with Hawkeye.
 
 You can read more about GitHub workflow definitions
-[here](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions)
+[here](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions).
 
 ## Prerequisites
 
