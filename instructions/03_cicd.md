@@ -18,12 +18,12 @@ continuing. In particular, ensure that you have
 
 ## Create the workflow definition
 
-Go to `.github/workflows` and create a new workflow file `hawkeye.yml` You can use the template yaml below as a starting point.
+Go to `.github/workflows` and create a new workflow file `hawkeye.yml`. You can use the template yaml below as a starting point.
 
-See if you can create a workflow called `Hawkeye Scan` which has the following steps
+See if you can create a workflow called `Hawkeye Scan` which has the following steps:
 
-1. checks out the repo (`uses: actions/checkout@v2`)
-2. runs `hawkeye scan --target web/` using the `scanner-cli` container.
+  1. checks out the repo (`uses: actions/checkout@v2`)
+  2. runs `hawkeye scan --target web/` using the `scanner-cli` container
 
 For step two, You will need to use the
 [`jobs.<job_id>.container`](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idcontainer)
@@ -34,7 +34,7 @@ to mount the cloned repository inside the container with
 definition filled out for you has been provided below.
 
 All you need to do is fill out the workflow name and define the second step of the job. Because we have configured the job to use the `scanner-cli` image, you should be able to run the `hawkeye` binary directly in this step. You step definition should only require you to use the run
-[`run`](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsrun) keyword to execute `hawkeye scan --target web/`
+[`run`](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsrun) keyword to execute `hawkeye scan --target web/`.
 
 ```yml
 name: ... # <Name your workflow>
