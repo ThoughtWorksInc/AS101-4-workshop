@@ -126,7 +126,7 @@ We need to do a similar thing for the pipeline.
    `chmod +x entrypoint.sh`
 
    Now we need to update the existing workflow where PostgreSQL variables are currently used and specify the source for them.
-   We need to add the following steps to  lint_test.yml :
+   We need to add the following steps to  lint_test.yml file:
   
   ```
     - uses: ./.github/actions/prep
