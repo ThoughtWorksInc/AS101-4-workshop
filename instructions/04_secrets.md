@@ -75,7 +75,6 @@ Secrets would be removed from the code and sourced using a secret manager.
 	
     ```
    docker-compose rm -f
-   docker-compose pull  
    docker-compose up --build
    ```
    
