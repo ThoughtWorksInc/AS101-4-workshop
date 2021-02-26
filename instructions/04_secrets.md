@@ -14,13 +14,13 @@ Secrets would be removed from the code and sourced using a secret manager.
 
 1. Encrypting sensitive variables
 
-   Go to your forked repo directory and create an encrypted file with credentials for Postgres in it:
+   Go to your forked repo directory and create an encrypted file with credentials for PostgreSQL in it:
    ```
    ansible-vault create env_secrets
    ```
    You'd be asked to create a password for Ansible Vault. Make sure it's a strong password and it's being stored securely, e.g. using a password manager.
   
-   Once the password is entered, you'll need to paste the content of what you want to encrypt. Use the following format, but make sure to replace the values with the Postgres values from the docker-compose.yml file:
+   Once the password is entered, you'll need to paste the content of what you want to encrypt. Use the following format, but make sure to replace the values with the PostgreSQL values from the docker-compose.yml file:
    
    ```
    POSTGRES_USER="user"
@@ -52,7 +52,7 @@ Secrets would be removed from the code and sourced using a secret manager.
    `ansible-vault view --vault-password-file=<path_to_vault_password> env_secrets`
 
 
-1. In the docker-compose.yml file reference the encrypted variables for Postgres:
+1. In the docker-compose.yml file reference the encrypted variables for PostgreSQL:
 	
    ```
    POSTGRES_USER: ${POSTGRES_USER}
