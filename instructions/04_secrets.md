@@ -125,7 +125,7 @@ We need to do a similar thing for the pipeline.
    
    `chmod +x entrypoint.sh`
 
-   Now we need to update the existing workflow where Postgres variables are currently used and specify the source for them.
+   Now we need to update the existing workflow where PostgreSQL variables are currently used and specify the source for them.
    We need to add the following steps to  lint_test.yml :
   
   ```
@@ -138,7 +138,7 @@ We need to do a similar thing for the pipeline.
         echo "::add-mask::$POSTGRES_PASSWORD"
         echo "::add-mask::$POSTGRES_DB"
    ```
-   These would set the VAULT_PASS environment variable and mask Postgres variables. 
+   These would set the VAULT_PASS environment variable and mask PostgreSQL variables. 
    Note there is a known [issue](https://github.com/actions/runner/issues/475) currently with `add-mask` that results in the variables being printed out in the    pipeline in plaintext the 1st time after the mask is added. 
 
    Once you push these changes, the lint_test workflow should be passing now in the pipeline.
