@@ -1,8 +1,5 @@
 # Exercise 4 - Handling secrets
 
-## TODO
-- update readme, make it more readable and complete the TBD items 
-
 ## Prerequisites
 
 If you haven't already done so, you will need to follow the [Setup Instructions](00_setup.md) before
