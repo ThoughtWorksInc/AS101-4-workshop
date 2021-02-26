@@ -83,7 +83,7 @@ Secrets would be removed from the code and sourced using a secret manager.
 
 1. Running in a pipeline
 
-   Notice that one of your workflows `lint_test` just failed. The reason for this is that you've extracted the postgres variables, but haven't specified where these values should be taken from. When we run our application locally, we've been exposing the variable values through the shell. 
+   Notice that one of your workflows `lint_test` just failed. The reason for this is that you've extracted the PostgreSQL variables, but haven't specified where these values should be taken from. When we run our application locally, we've been exposing the variable values through the shell. 
 We need to do a similar thing for the pipeline.
 
    First of all, you'd need to provide a source of the vault password.
@@ -91,7 +91,7 @@ We need to do a similar thing for the pipeline.
    Your forked repo -> Settings -> Secrets -> 'New repository secret'
    Name this secret as `VAULT_PASS`.
 
-   To extract Postgres variables from the encrypted env_secrets file we are going to use GitHub actions.
+   To extract PostgreSQL variables from the encrypted env_secrets file we are going to use GitHub actions.
    In your .github directory create the following folder structure: actions/prep. 
    In the prep folder create the following 3 files: Dockerfile, action.yml and entrypoint.sh.
  
