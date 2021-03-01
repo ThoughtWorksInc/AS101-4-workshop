@@ -93,8 +93,8 @@ We need to do a similar thing for the pipeline.
    To extract PostgreSQL variables from the encrypted env_secrets file we are going to use GitHub actions.
    In your .github directory create the following folder structure: actions/prep. 
    In the prep folder create the following 3 files: Dockerfile, action.yml and entrypoint.sh.
- 
-   TODO :explain the usage of action.yml, Dockerfile, entrypoint.sh
+   
+   The `action.yml` contains Github Action configuration that executes the Docker image specified in the `Dockerfile`. The `Dockerfile` contains Ansible installation and identifies the default executable for your image via ENTRYPOINT.
 
    Contents for action.yml:
    
