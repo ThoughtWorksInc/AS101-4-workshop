@@ -18,23 +18,15 @@ continuing. In particular, ensure that you have
 
 ## Create the workflow definition
 
-Go to `.github/workflows` and create a new workflow file `hawkeye.yml`. You can use the template yaml below as a starting point.
+Go to `.github/workflows` and create a new workflow file `hawkeye.yml`.
 
 See if you can create a workflow called `Hawkeye Scan` which has the following steps:
 
   1. checks out the repo (`uses: actions/checkout@v2`)
   2. runs `hawkeye scan --target web/` using the `scanner-cli` container
 
-For step two, You will need to use the
-[`jobs.<job_id>.container`](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idcontainer)
-syntax to run a step in the `scanner-cli` container. At the time of writing, it was necessary to use the
-[jobs.<job_id>.container.options](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idcontaineroptions) syntax
-to mount the cloned repository inside the container with
-`-v /__w/as101-4-workshop/as101-4-workshop:/target`, so a skeleton yaml file with the
-definition filled out for you has been provided below.
-
-All you need to do is fill out the workflow name and define the second step of the job. Because we have configured the job to use the `scanner-cli` image, you should be able to run the `hawkeye` binary directly in this step. You step definition should only require you to use the run
-[`run`](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsrun) keyword to execute `hawkeye scan --target web/`.
+ You can use the template yaml below as a starting point. You will need to fill out the workflow name and define the second step of the job. Because we have configured the job to use the `scanner-cli` image, you should be able to run the `hawkeye` binary directly in this step. Your step definition should only require you to use the
+[`run`](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsrun) keyword to execute `hawkeye scan --target web/` keyword.
 
 ```yml
 name: ... # <Name your workflow>
@@ -68,6 +60,6 @@ We expect the workflow to fail, since some of the dependencies are out of date.
 
 ## Fix Hawkeye errors
 
-Try to modify your repository so that hawkeye does not show any critical errors locally.
+Try to modify your repository so that Hawkeye does not show any critical errors locally.
 
 Re-build the app and verify that it still works before pushing.
