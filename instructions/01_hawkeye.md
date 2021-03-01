@@ -27,4 +27,4 @@ trip up Hawkeye with the following error:
 [error] Unexpected error occurred! ENOENT: no such file or directory, stat '/target/.git/hooks/pre-commit'
 ```
 
-This is why I have added a `.hawkeyerc` to disable the `java-find-secbugs` module.
+If you get the error shown above, add the `java-find-secbugs` module  to `.hawkeyerc` to resolve the error.
