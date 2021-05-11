@@ -69,7 +69,7 @@ The `pwd` command will output your current directory.
 
 ## Git Authentication
 
-There are several ways you can clone this repository. The default is https (remote url looks like `https://github.com/ThoughtWorksInc/AS101-4-workshop.git`) but you can also use ssh (remote looks like `git@github.com:ThoughtWorksInc/AS101-4-workshop.git`). You can check which one your are using with `git remote -v`.
+There are several ways you can clone this repository. The default is https (remote url looks like `https://github.com/ThoughtWorksInc/AS101-4-workshop.git`) but you can also use ssh (remote looks like `git@github.com:ThoughtWorksInc/AS101-4-workshop.git`). You can check which one you are using with `git remote -v`.
 
 If you are using an SSH origin and have multiple git accounts, you may want to review [these instructions](https://sites.google.com/thoughtworks.com/infosec-hub/awareness-deprecated/git-account-segregation) on git account segregation.
 
