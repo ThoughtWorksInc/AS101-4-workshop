@@ -170,8 +170,15 @@ Which should output some talisman debug info.
 
 There are two options to install ansible: globally or locally. Note that ansible installation is time-consuming (can take half an hour or more).
 
-### Installing Ansible globally 
-Follow [instructions](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#from-pip) specified on the ansible official site. 
+### Installing Ansible globally
+
+Install using Homebrew:
+
+```bash
+brew install ansible
+```
+
+Or follow the [instructions](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#from-pip) on ansible's official site. 
 
 ### Installing Ansible locally via `virtualenv`. 
 
