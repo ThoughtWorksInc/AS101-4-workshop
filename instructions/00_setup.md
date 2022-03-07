@@ -14,14 +14,22 @@ docker-compose version
 ```
 If they are, you can skip to [Pulling Docker images](#pulling-docker-images).
 
-Otherwise, the easiest way to install them on MacOS is to install [Docker Desktop for Mac](https://docs.docker.com/docker-for-mac/install/) (includes `docker-compose`) via the
+Otherwise, the easiest way to install them on MacOS is to install [colima](https://github.com/abiosoft/colima#installation) `docker` and `docker-compose` via the
 [Homebrew package manager](https://docs.brew.sh/Installation).
 
 ```bash
-brew install --cask docker
+brew install colima
+brew install docker
+brew install docker-compose
 ```
 
-Alternatively, if you would like to only install the command line tools:
+And start colima
+
+```bash
+colima start
+```
+
+Alternatively, if you would like to install the command line tools and use docker-machine with virtualbox:
 
 * See [these instructions](https://medium.com/crowdbotics/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3)
 for installing `docker`
