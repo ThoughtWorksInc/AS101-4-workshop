@@ -29,16 +29,6 @@ And start colima
 colima start
 ```
 
-Alternatively, if you would like to install the command line tools and use docker-machine with virtualbox:
-
-* See [these instructions](https://medium.com/crowdbotics/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3)
-for installing `docker`
-
-* `docker-compose` can be installed with the following terminal command
-    ```bash
-    brew install docker-compose
-    ```
-
 ## Pulling Docker images
 
 This is the slowest step of the exercise, so it's best to start it first so that it can run in the
