@@ -186,14 +186,25 @@ You'll need to insall `pyenv` (Python version management tool) and `pyenv-virtua
 brew install pyenv
 brew install pyenv-virtualenv
 ```
-Update your bash configuration file `~/.bash_profile` (or ` ~/.zshrc ` in case you use Zsh) by running the following in your terminal.
+
+Update your bash configuration file `~/.bash_profile` if you are using bash, by running the following in your terminal.
 
 ```
-echo ‘export PYENV_ROOT=”$HOME/.pyenv”’ >> ~/.bash_profile
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile
-echo ‘eval “$(pyenv virtualenv-init -)”’ >> ~/.bash_profile
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
 ```
+
+Or update your zsh configuration file `~/.zshrc` if you are using zsh, by running the following in your terminal.
+
+```
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
+```
+
 Run `source ~/.bash_profile` (or `source ~/.zshrc` if using Zsh) for the changes to take effect.
 
 Create a new Python virtual environment for the version of Python you want. We are using 3.8.5 in this example.
