@@ -80,7 +80,7 @@ If you are using an HTTPS origin, ensure you have an access token which has the 
 
 ### Starting the Application
 
-To see the sample app running, run the following terminal command: `docker-compose up --build`.
+To see the sample app (called Echo) running, run the following terminal command: `docker-compose up --build`.
 
 Then in your browser go to `localhost:8000`.
 
