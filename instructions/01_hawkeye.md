@@ -11,15 +11,15 @@ We will use [Hawkeye](https://github.com/hawkeyesec/scanner-cli) to automaticall
 base for secrets and vulnerabilities. This is a useful tool to have in your pipeline, in order to
 prevent anyone in your team from accidentally committing secrets or vulnerabilities.
 
-You can use the Hawkeye docker image to scan your repository with:
+You can use the Hawkeye docker image to scan the sample project repository (see [Setup Instructions](00_setup.md)) with:
 
 ```bash
 docker run --rm -v "$PWD/web:/target" hawkeyesec/scanner-cli:latest
 ```
 
-Did you find anything interesting?
+If you're running this against your own repository, make sure you choose the right directory for Hawkeye to scan (hint: you probably want to remove `/web`).
 
-**Note:** If you're wondering why the command above is targeting the `/web` directory, it's because that's where the web app in our sample project (see [Setup Instructions](00_setup.md)) is stored. If you're running this against your own project, you may want to remove the `/web`.
+Did you find anything interesting?
 
 **Note:** If you run Hawkeye on the root of the repo with the `java-find-secbugs` enabled, and you
 have Talisman installed globally, then there may be a symlink in `.git/hooks/pre-commit` that will
