@@ -19,6 +19,8 @@ docker run --rm -v "$PWD/web:/target" hawkeyesec/scanner-cli:latest
 
 Did you find anything interesting?
 
+**Note:** If you're wondering why the command above is targeting the `/web` directory, it's because that's where the web app in our sample project (see [Setup Instructions](00_setup.md)) is stored. If you're running this against your own project, you may want to remove the `/web`.
+
 **Note:** If you run Hawkeye on the root of the repo with the `java-find-secbugs` enabled, and you
 have Talisman installed globally, then there may be a symlink in `.git/hooks/pre-commit` that will
 trip up Hawkeye with the following error:
