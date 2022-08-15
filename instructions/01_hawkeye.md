@@ -19,7 +19,9 @@ docker run --rm -v "$PWD/web:/target" hawkeyesec/scanner-cli:latest
 
 If you're running this against your own repository, make sure you choose the right directory for Hawkeye to scan (hint: you probably want to remove `/web`).
 
-Did you find anything interesting? If you were responsible for this repository, which of the findings do you think would be the most concerning / highest priority to fix?
+**Did you find anything interesting? If you were responsible for this repository, which of the findings do you think would be the most concerning / highest priority to fix?**
+
+## Troubleshooting
 
 **Note:** If you run Hawkeye on the root of the repo with the `java-find-secbugs` enabled, and you
 have Talisman installed globally, then there may be a symlink in `.git/hooks/pre-commit` that will
