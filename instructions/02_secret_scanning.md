@@ -25,7 +25,7 @@ For this exercise, running the application is not necessary.
 
 1. Let's pretend that `danger.pem` is a secret that we actually want in our repository, Use the
    output of Talisman to create a `.talismanrc` to allow this secret to be committed. The
-   information you need is in the Talisman Report section, above the following message:
+   information you need is in the Talisman Report section, below the following message:
 
    ```txt
    If you are absolutely sure that you want to ignore the above files from talisman detectors, consider pasting the following format in .talismanrc file in the project root
