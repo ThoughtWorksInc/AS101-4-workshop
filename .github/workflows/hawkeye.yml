@@ -1,0 +1,13 @@
+name: Hawkeye Scan
+on: [push, pull_request]
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    container:
+      image: hawkeyesec/scanner-cli:latest
+      options: -v /__w/as101-4-workshop/as101-4-workshop:/target
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: hawkeye scan --target web/
