@@ -1,0 +1,21 @@
+name: Hawkeye Scan # <Name your workflow>
+# Controls when the action will run. Triggers the workflow on push or pull request on any branch
+on: [push, pull_request]
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "scan"
+  scan:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    container:
+      # This tells GitHub Actions to use our docker image
+      image: hawkeyesec/scanner-cli:latest
+      # This tells GitHub Actions to mount the location where the code was checked out to /target
+      options: -v /__w/as101-4-workshop/as101-4-workshop:/target
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - run: hawkeye scan --target web/ # <Fill out the second step>
