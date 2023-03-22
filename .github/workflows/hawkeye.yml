@@ -1,0 +1,18 @@
+name: Hawkeye Scan
+on: push
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    container:
+      image: hawkeyesec/scanner-cli:latest
+      options: -v /__w/as101-4-workshop/as101-4-workshop:/target
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+
+      - name: run scan
+        run:  hawkeye scan --target web/
