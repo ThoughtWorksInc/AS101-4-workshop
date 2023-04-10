@@ -1,1 +1,1 @@
-password = 'hello x'
+password = 'hello'
