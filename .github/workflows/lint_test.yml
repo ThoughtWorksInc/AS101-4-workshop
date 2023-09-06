@@ -14,18 +14,18 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
-    - name: build docker containers
-      run: |
-        docker-compose build
-    - name: Lint web using flake8 in web docker container
-      run: |
-        docker-compose run web bash -c \
-          "flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics \
-           && flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics"
-    - name: Basic smoke test
-      run: |
-        docker-compose up --build --detach
-        sleep 10
-        curl --fail localhost:8000
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: build docker containers
+        run: |
+          docker-compose build
+      - name: Lint web using flake8 in web docker container
+        run: |
+          docker-compose run web bash -c \
+            "flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics \
+             && flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics"
+      - name: Basic smoke test
+        run: |
+          docker-compose up --build --detach
+          sleep 10
+          curl --fail localhost:8000
